@@ -1,0 +1,53 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 90vh;
+}
+
+.image-gallery {
+    width: 70%;
+    height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #fff;
+    border-right: 2px solid #ccc;
+}
+
+.image-gallery img {
+    width: 150px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.1);
+}
+
+.description-box {
+    width: 30%;
+    padding: 20px;
+    background-color: #fff;
+    display: none;
+    border-left: 2px solid #ccc;
+}
+
+.description-box p {
+    font-size: 16px;
+    color: #333;
+}
