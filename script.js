@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const overlay = document.getElementById('overlay');
     const largeImage = document.getElementById('large-image');
     const descriptionBox = document.getElementById('description');
+    const leftArrow = document.getElementById('left-arrow');
+    const rightArrow = document.getElementById('right-arrow');
 
     let currentIndex = -1;
     let images = [];
@@ -44,6 +46,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hide the overlay when clicked outside
     overlay.addEventListener('click', function() {
         hideOverlay();
+    });
+
+    // Left arrow click
+    leftArrow.addEventListener('click', function(e) {
+        e.stopPropagation();  // Prevent hiding the overlay when clicking the arrow
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        showOverlay(images[currentIndex]);
+    });
+
+    // Right arrow click
+    rightArrow.addEventListener('click', function(e) {
+        e.stopPropagation();  // Prevent hiding the overlay when clicking the arrow
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        showOverlay(images[currentIndex]);
     });
 
     // Keyboard navigation for left (37) and right (39) arrows
